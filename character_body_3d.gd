@@ -3,18 +3,20 @@ class_name Player
 
 @export var trailScene: PackedScene
 
-const SPEED = 5.0
-const STEERING_POWER = 2.0
+const SPEED = 8.0
+const STEERING_POWER = 5.0
 const TRAIL_REFRESH_RATE: int = 1
 
 var frame_count: int = 0
 
 const TRAIL_OFFSET: float = 0.3
+var SNAKE_SCALE = Vector3(Game.SNAKE_GIRTH/10, Game.SNAKE_GIRTH/10, Game.SNAKE_GIRTH/10)
 var trail_segments = []
 
 func _ready():
 	print("player ready")
 	Game.moving = true
+	scale = SNAKE_SCALE
 
 func generate_trail() -> void:
 	if not Game.moving: return
@@ -23,6 +25,7 @@ func generate_trail() -> void:
 	var trail_segment = trailScene.instantiate()
 	# var local_position = position #- (Vector3(0, 0, 1) * TRAIL_OFFSET)
 	# trail_segment.global_position = to_global(local_position)
+	trail_segment.scale = SNAKE_SCALE
 	trail_segment.position = position - global_transform.basis.z*TRAIL_OFFSET
 	trail_segment.rotation = rotation
 
@@ -56,7 +59,8 @@ func _physics_process(delta: float) -> void:
 	velocity = global_transform.basis.z * SPEED
 	move_and_slide()
 
-
+	if get_last_slide_collision():
+		Game.game_over()
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Collision Detection
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

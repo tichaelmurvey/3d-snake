@@ -28,7 +28,6 @@ height = 0.15
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=288842577]
 collision_layer = 0
-collision_mask = 0
 script = ExtResource("1_4flbx")
 trailScene = ExtResource("2_onrkg")
 
@@ -53,7 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2532025, 0.3503695, 0.36658
 script = ExtResource("4_hqtel")
 
 [node name="tongue_mesh" type="MeshInstance3D" parent="tongue" unique_id=1190008611]
-transform = Transform3D(0.047925778, -0.9988509, 0, 0.9988509, 0.047925778, 0, 0, 0, 1, 0, 0.08844173, 0.6863197)
+transform = Transform3D(0.047925778, -0.9988509, 0, 0.9988509, 0.047925778, 0, 0, 0, 1, 0, 0.08844173, 0.8760023)
 mesh = SubResource("CapsuleMesh_sweqy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tongue" unique_id=902531183]

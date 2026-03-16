@@ -11,7 +11,7 @@ inner_radius = 0.79
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_frgtl"]
 height = 0.1
-radius = 1.0
+radius = 0.8125
 
 [node name="fruit" type="Node3D" unique_id=1194933215]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
