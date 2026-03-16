@@ -3,7 +3,7 @@ class_name Player
 
 @export var trailScene: PackedScene
 
-const SPEED = 8.0
+const SPEED = 6.0
 const STEERING_POWER = 5.0
 const TRAIL_REFRESH_RATE: int = 1
 

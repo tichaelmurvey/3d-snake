@@ -4,7 +4,8 @@ var _game_over_layer: CanvasLayer
 var moving = true
 var trail_length = 90
 const GAME_BOX_SIZE = 50.0
-const SPAWN_RADIUS = (GAME_BOX_SIZE - 10)/2
+var SCORE = 0
+const SPAWN_RADIUS = (GAME_BOX_SIZE - 20)/2
 const SNAKE_GIRTH = 20.0
 const fruit_scene : PackedScene = preload("res://fruit.tscn")
 

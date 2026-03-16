@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 func eat_fruit():
 	print("eaten!")
+	Game.SCORE += 10
 	Game.trail_length += SIZE_INCREASE
 	Game.spawn_fruit()
 	queue_free()
