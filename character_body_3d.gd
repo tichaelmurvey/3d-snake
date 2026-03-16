@@ -13,7 +13,8 @@ func generate_trail() -> void:
 	print("Generating trail segment")
 	# Create a new trail segment at the current position
 	var trail_segment = trailScene.instantiate()
-	# trail_segment.position = position - Vector3(0, 0, 1)
+	# var local_position = position #- (Vector3(0, 0, 1) * TRAIL_OFFSET)
+	# trail_segment.global_position = to_global(local_position)
 	trail_segment.global_position = global_position
 	trail_segment.rotation = rotation
 
